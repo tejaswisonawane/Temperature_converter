@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://t4.ftcdn.net/jpg/02/10/54/69/360_F_210546904_9BCZEy11YRxLIXH4WHC1btb0sPx7nF2m.jpg');
+            
+            background-size: cover;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            height: 100vh;
+        }
+        .container {
+            margin-top: 20%;
+            border-radius: 10px;
+            display: inline-block;
+            padding: 30px;
+            text-align: center;
+            background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20220125/pngtree-fall-of-temperature-ice-winter-fall-of-temperature-photo-image_550592.jpg');
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .x1, .x3, .x4 {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .x2 {
+            text-align: center;
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="x1">Temperature Converter</p>
+        <input type="text" class="x2" id="x2" placeholder="Enter Temperature in Celsius"><br>
+        <button onclick="f1()">Convert</button>
+        <p class="x3">Fahrenheit</p>
+        <p class="x4">Kelvin</p>
+    </div>
+    <script>
+        function f1() {
+            var c = parseFloat(document.getElementById("x2").value); // accessing the input field with id "x2"
+            var t2 = c * (9/5) + 32;
+            var k = c + 273.15;
+            document.querySelector(".x3").innerHTML = t2.toFixed(2) + "°F"; 
+            document.querySelector(".x4").innerHTML = k.toFixed(2) + "K"; // displaying the result with the proper unit
+        }
+    </script>
+</body>
+</html>
